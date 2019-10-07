@@ -23,16 +23,27 @@ public class AquaSimApplication
      **/
     public static void main(String args[])
     {
-        System.out.println("Welcome to Rowland Heights Seaworld!, where we love abusing Whales!");
+        System.out.println("Onion has yeo to Pyongyang Sea center!!!");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
 
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
-        aqua = new Aquarium(600, 480); // ... object that has now been created
+        aqua = new Aquarium(1920, 1080); // ... object that has now been created
 
         // Construct fish and add them to the aquarium.
         //      CODE MISSING HERE!
+        //add aquafish to aquarium.
+        
+        AquaFish salmon = new AquaFish(aqua);
+        AquaFish hamburg_steak = new AquaFish(aqua);
+        AquaFish moby_dick = new AquaFish(aqua);
+        
+        aqua.add(salmon);
+        aqua.add(hamburg_steak);
+        aqua.add(moby_dick);
+        
+        
 
         // Construct a graphical user interface (GUI) to display and control
         // the simulation.  The user interface needs to know about the
@@ -53,7 +64,12 @@ public class AquaSimApplication
         // RUN THE AQUARIUM SIMULATION.
 
         // Make the fish move and redisplay.
-        //      CODE MISSING HERE!
+        //      CODE MISSING HERE
+            salmon.moveForward();
+            hamburg_steak.moveForward();
+            moby_dick.moveForward();    
+        
+        userInterface.showAquarium();
 
 
         // WRAP UP.
