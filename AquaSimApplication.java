@@ -26,7 +26,8 @@ public class AquaSimApplication
         System.out.println("Onion has yeo to Pyongyang Sea center!!!");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
-
+        Random generator = new Random();
+        //int randNum = generator.nextInt(10);
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
         aqua = new Aquarium(2048, 1152); // ... object that has now been created
@@ -35,9 +36,9 @@ public class AquaSimApplication
         //      CODE MISSING HERE!
         //add aquafish to aquarium.
         
-        AquaFish salmon = new AquaFish(aqua);
-        AquaFish hamburg_steak = new AquaFish(aqua);
-        AquaFish moby_dick = new AquaFish(aqua);
+        AquaFish salmon = new AquaFish(aqua, Color.RED);
+        AquaFish hamburg_steak = new AquaFish(aqua, Color.BLACK);
+        AquaFish moby_dick = new AquaFish(aqua, Color.WHITE);
         
         aqua.add(salmon);
         aqua.add(hamburg_steak);
@@ -78,30 +79,54 @@ public class AquaSimApplication
         userInterface.showAquarium();
         
         
-            
-          
-        
-        if (salmon.atWall() || hamburg_steak.atWall() || moby_dick.atWall())
+        for(;;)
         {
-            salmon.changeDir();
-            hamburg_steak.changeDir();
-            moby_dick.changeDir();
+            if (salmon.atWall())
+            {   
+                salmon.changeDir();
+                salmon.moveForward();
+            
+            
+            }else
+            {
+                salmon.moveForward();
+            
+            }
+             if (hamburg_steak.atWall())
+            {   
+                hamburg_steak.changeDir();
+                hamburg_steak.moveForward();
+            
+            
+            }else
+            {
+                hamburg_steak.moveForward();
+            
+            }
+            if (moby_dick.atWall())
+            {   
+               moby_dick.changeDir();
+                moby_dick.moveForward();
+            
+            
+            }else
+            {
+                moby_dick.moveForward();
+            
+            }
         
+            userInterface.showAquarium();
         }
-        userInterface.showAquarium();
         
-        salmon.moveForward();
-        hamburg_steak.moveForward();
-        moby_dick.moveForward();
         
-        userInterface.showAquarium();
+        
         
 
 
         // WRAP UP.
-
+    
         // Remind user how to quit application.
-        userInterface.println ("Close GUI display window to quit.");
+        //userInterface.println ("Close GUI display window to quit.");
 
     }//end main
 
