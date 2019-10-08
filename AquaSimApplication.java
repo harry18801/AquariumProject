@@ -29,7 +29,7 @@ public class AquaSimApplication
 
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
-        aqua = new Aquarium(1920, 1080); // ... object that has now been created
+        aqua = new Aquarium(2048, 1152); // ... object that has now been created
 
         // Construct fish and add them to the aquarium.
         //      CODE MISSING HERE!
@@ -70,6 +70,32 @@ public class AquaSimApplication
             moby_dick.moveForward();    
         
         userInterface.showAquarium();
+        
+         salmon.moveForward();
+            hamburg_steak.moveForward();
+            moby_dick.moveForward();    
+        
+        userInterface.showAquarium();
+        
+        
+            
+          
+        
+        if (salmon.atWall() || hamburg_steak.atWall() || moby_dick.atWall())
+        {
+            salmon.changeDir();
+            hamburg_steak.changeDir();
+            moby_dick.changeDir();
+        
+        }
+        userInterface.showAquarium();
+        
+        salmon.moveForward();
+        hamburg_steak.moveForward();
+        moby_dick.moveForward();
+        
+        userInterface.showAquarium();
+        
 
 
         // WRAP UP.
