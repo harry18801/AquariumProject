@@ -16,18 +16,23 @@ import java.util.Random;
  *  @see AquariumController
  **/
 public class AquaSimApplication
+
+
 {
     /**
      *  This is the main function.  It executes the program.
      *  @param    String args[] is never used
      **/
+     private static Random generator;
     public static void main(String args[])
     {
         System.out.println("Onion has yeo to Pyongyang Sea center!!!");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
-        Random generator = new Random();
-        //int randNum = generator.nextInt(10);
+        generator = new Random();
+        //Random generator = new Random();
+        //int randNum = generator.nextInt(2);
+       
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
         aqua = new Aquarium(2048, 1152); // ... object that has now been created
@@ -35,10 +40,10 @@ public class AquaSimApplication
         // Construct fish and add them to the aquarium.
         //      CODE MISSING HERE!
         //add aquafish to aquarium.
+        AquaFish salmon = new AquaFish(aqua, getColor());
+        AquaFish hamburg_steak = new AquaFish(aqua, getColor());
+        AquaFish moby_dick = new AquaFish(aqua, getColor());
         
-        AquaFish salmon = new AquaFish(aqua, Color.RED);
-        AquaFish hamburg_steak = new AquaFish(aqua, Color.BLACK);
-        AquaFish moby_dick = new AquaFish(aqua, Color.WHITE);
         
         aqua.add(salmon);
         aqua.add(hamburg_steak);
@@ -129,5 +134,14 @@ public class AquaSimApplication
         //userInterface.println ("Close GUI display window to quit.");
 
     }//end main
-
+    public static Color getColor()
+    {
+    int randNum = generator.nextInt(2);
+    if(randNum==0)
+        return Color.RED;
+    else if (randNum==1)
+        return Color.BLUE;
+    else
+        return Color.GREEN;
+    }
 }//end class
