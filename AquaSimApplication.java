@@ -83,7 +83,7 @@ public class AquaSimApplication
         
         userInterface.showAquarium();
         
-        
+        //fix
         for(;;)
         {
             if (salmon.atWall())
