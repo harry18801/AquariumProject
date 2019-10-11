@@ -71,57 +71,25 @@ public class AquaSimApplication
 
         // Make the fish move and redisplay.
         //      CODE MISSING HERE
-            salmon.moveForward();
-            hamburg_steak.moveForward();
-            moby_dick.moveForward();    
-        
-        userInterface.showAquarium();
-        
-         salmon.moveForward();
-            hamburg_steak.moveForward();
-            moby_dick.moveForward();    
-        
-        userInterface.showAquarium();
+ 
         
         //fix
-        for(;;)
-        {
-            if (salmon.atWall())
-            {   
-                salmon.changeDir();
-                salmon.moveForward();
-            
-            
-            }else
-            {
-                salmon.moveForward();
-            
-            }
-             if (hamburg_steak.atWall())
-            {   
-                hamburg_steak.changeDir();
-                hamburg_steak.moveForward();
-            
-            
-            }else
-            {
-                hamburg_steak.moveForward();
-            
-            }
-            if (moby_dick.atWall())
-            {   
-               moby_dick.changeDir();
-                moby_dick.moveForward();
-            
-            
-            }else
-            {
-                moby_dick.moveForward();
-            
-            }
-        
-            userInterface.showAquarium();
-        }
+        for (;;)
+       {
+    if (salmon.atWall())
+    salmon.changeDir();
+    salmon.moveForward();
+
+    if (hamburg_steak.atWall())
+    hamburg_steak.changeDir();
+    hamburg_steak.moveForward();
+
+    if (moby_dick.atWall())
+    moby_dick.changeDir();
+    moby_dick.moveForward();
+
+    userInterface.showAquarium();
+    }
         
         
         
@@ -136,12 +104,18 @@ public class AquaSimApplication
     }//end main
     public static Color getColor()
     {
-    int randNum = generator.nextInt(2);
+    int randNum = generator.nextInt(6);
     if(randNum==0)
         return Color.RED;
     else if (randNum==1)
+        return Color.ORANGE;
+    else if (randNum==2)
+        return Color.YELLOW;
+    else if (randNum==3)
+        return Color.GREEN;
+    else if (randNum==4)
         return Color.BLUE;
     else
-        return Color.GREEN;
+        return Color.MAGENTA;
     }
 }//end class
